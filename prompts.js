@@ -75,7 +75,8 @@ module.exports = [
       { name: 'Axios', value: 'axios' },
       { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
       { name: 'DotEnv', value: 'dotenv' },
-      { name: 'Imagemin', value: 'imagemin' }
+      { name: 'Imagemin', value: 'imagemin' },
+      { name: 'PurgeCSS', value: 'purgecss' }
     ],
     default: []
   },

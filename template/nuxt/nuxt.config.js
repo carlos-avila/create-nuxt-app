@@ -130,6 +130,9 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     <%_ } _%>
+    <%_ if (purgecss) { _%>
+    'nuxt-purgecss',
+    <%_ } _%>
   ],
   <%_ if (axios) { _%>
   /*
@@ -176,6 +179,25 @@ module.exports = {
         ['svgo', { plugins: [{ removeViewBox: false }] }]
       ]
     }
+  },
+  <%_ } _%>
+  <%_ if (purgecss) { _%>
+  /*
+  ** PurgeCSS module configuration
+  ** https://github.com/Developmint/nuxt-purgecss
+  */
+  purgeCSS: {
+    mode: 'postcss',
+    paths: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      './node_modules/vuetify/src/**/*.ts'
+    ],
+    whitelistPatterns: [
+      // Some modules are invisible to PurgeCSS. Add missing classes here.
+    ]
   },
   <%_ } _%>
   /*
