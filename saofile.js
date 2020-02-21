@@ -17,6 +17,7 @@ module.exports = {
     const dotenv = this.answers.features.includes('dotenv')
     const imagemin = this.answers.features.includes('imagemin')
     const purgecss = this.answers.features.includes('purgecss')
+    const styleResources = this.answers.features.includes('styleResources')
     const esm = this.answers.server === 'none'
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
@@ -37,7 +38,8 @@ module.exports = {
       pmRun,
       dotenv,
       imagemin,
-      purgecss
+      purgecss,
+      styleResources
     }
   },
   actions () {
